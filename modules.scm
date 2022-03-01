@@ -10,7 +10,3 @@
      (module-define! (resolve-module 'mod) 'name val)]
     [(define-in mod (name args ...) vals ...)
      (module-define! (resolve-module 'mod) 'name (lambda (args ...) vals ...))]))
-
-(define-syntax-rule (export-in module name ...))
-    
-     
