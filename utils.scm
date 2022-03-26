@@ -1,5 +1,5 @@
 (define-module (shorthand utils)
-  #:use-module (rnrs))
+  #:use-module (guile))
 
 (define* (maybe fn val #:optional else)
   "Applys the function if the value isn't false, otherwise returns the alternative.
@@ -10,4 +10,11 @@
   "Applies a function to a value if the predicate holds for the given value"
   (if (pred val) (fn val) val))
 
-(export maybe apply-if)
+(define* (non fn #:rest args)
+  "If no arguments is provided, negate the function,
+   otherwise apply the neated function to the arguments"
+  (if (null? args)
+      (negate fn)
+      (apply (negate fn) args))) 
+
+(export maybe apply-if non)
