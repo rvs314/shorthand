@@ -1,4 +1,4 @@
-(define-module (shothand sugar)
+(define-module (shorthand sugar)
   #:use-module (guile))
 
 ;; Defines a bunch of objects, optionally public
